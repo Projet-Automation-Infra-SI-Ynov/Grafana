@@ -19,6 +19,7 @@
 - name: Install requirements
   apt:
     name: 
+      - sudo
       - ca-certificates
       - curl
       - gnupg
