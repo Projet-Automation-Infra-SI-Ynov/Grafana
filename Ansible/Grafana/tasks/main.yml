@@ -1,0 +1,27 @@
+---
+# tasks file for Grafana
+
+- name: Change hostname
+  hostname:
+    name: DOCKER-TOOLS
+
+- name: Download Grafana repository
+  git:
+    repo: https://github.com/Projet-Automation-Infra-SI-Ynov/Grafana.git
+    dest: '{{ PATH }}'
+    version: develop
+
+# - name: Add Jankins address IP in prometheus file
+#   shell: sed -i 's/IP_JENKINS/192.168.10.7/g' '{{ PATH }}'/prometheus.yml
+
+# - name: Build and start Grafana Image
+#   shell: docker-compose -f '{{ PATH }}'/docker-compose.yml up -d
+
+- name: Deploy Docker Compose Grafana
+  docker_compose:
+    build: yes
+    project_src: /home/administrateur/grafana
+    state: present
+    # project_src: /home/debian/grafana/
+    # files:
+    #   - docker-compose.yml
