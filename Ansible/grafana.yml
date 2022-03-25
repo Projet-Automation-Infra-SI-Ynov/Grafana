@@ -18,7 +18,7 @@
 #     - name: Start grafana image
 #       shell: docker-compose up -d
 
-- hosts: grafana
+- hosts: localhost
   become: yes
   roles:
     - role: Docker
