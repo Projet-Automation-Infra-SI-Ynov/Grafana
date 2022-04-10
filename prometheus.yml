@@ -21,18 +21,25 @@ scrape_configs:
   - job_name: 'prometheus'
     static_configs:
     - targets: ['prometheus:9090']
+  # Jenkins
   - job_name: 'jenkins'
     metrics_path: /prometheus/
     static_configs:
-    - targets: ['192.168.10.13:80']
+    - targets: ['IP_JENKINS:80']
+  # Registry
   - job_name: 'registry'
     static_configs:
-    - targets: ['192.168.10.15:5000']
+    - targets: ['IP_REGISTRY:5000']
   
   # Node exporter
   - job_name: 'DOCKER-TOOLS'
     static_configs:
-    - targets: ['192.168.10.13:9100']
+    - targets: ['IP_JENKINS:9100']
   - job_name: 'DOCKER-REGISTRY'
     static_configs:
-    - targets: ['192.168.10.15:9100']
+    - targets: ['IP_REGISTRY:9100']
+  
+  # Docker
+  - job_name: "Docker Job"
+    static_configs:
+    - targets: ['192.168.23.158:9323']
