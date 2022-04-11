@@ -14,7 +14,7 @@
 - name: Add Jenkins IP in prometheus.yml
   shell: sed -i 's/IP_JENKINS/JENKINS2/g' /home/administrateur/grafana/prometheus.yml
 
-- name: Add Jenkins IP in prometheus.yml
+- name: Add Registry IP in prometheus.yml
   shell: sed -i 's/IP_REGISTRY/REGISTRY2/g' /home/administrateur/grafana/prometheus.yml
 
 - name: Deploy Docker Compose Grafana
