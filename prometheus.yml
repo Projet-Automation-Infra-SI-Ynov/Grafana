@@ -25,7 +25,10 @@ scrape_configs:
   - job_name: 'jenkins'
     metrics_path: /prometheus/
     static_configs:
-    - targets: ['IP_JENKINS:80', 'IP_JENKINS:9100', 'IP_JENKINS:9323']
+    - targets: ['IP_JENKINS:80']
+  - job_name: 'jenkins2'
+    static_configs:
+    - targets: ['IP_JENKINS:9100', 'IP_JENKINS:9323']
   # Registry
   - job_name: 'registry'
     static_configs:

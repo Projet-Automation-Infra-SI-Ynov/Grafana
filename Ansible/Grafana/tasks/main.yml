@@ -11,17 +11,14 @@
     dest: '{{ PATH }}'
     version: develop
 
-# - name: Add Jankins address IP in prometheus file
-#   shell: sed -i 's/IP_JENKINS/192.168.10.7/g' '{{ PATH }}'/prometheus.yml
+- name: Add Jenkins IP in prometheus.yml
+  shell: sed -i 's/IP_JENKINS/JENKINS/g' ../../../../prometheus.yml
 
-# - name: Build and start Grafana Image
-#   shell: docker-compose -f '{{ PATH }}'/docker-compose.yml up -d
+- name: Add Jenkins IP in prometheus.yml
+  shell: sed -i 's/IP_REGISTRY/REGISTRY/g' ../../../../prometheus.yml
 
 - name: Deploy Docker Compose Grafana
   docker_compose:
     build: yes
     project_src: /home/administrateur/grafana
     state: present
-    # project_src: /home/debian/grafana/
-    # files:
-    #   - docker-compose.yml
