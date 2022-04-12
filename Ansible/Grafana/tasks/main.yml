@@ -18,7 +18,7 @@
   shell: sed -i 's/IP_REGISTRY/REGISTRY2/g' /home/administrateur/grafana/prometheus.yml
 
 - name: Add Registry IP in daemon.json
-  shell: sed -i 's/IP_REGISTRY/REGISTRY2/g' /home/administrateur/grafana/Ansible/dockerDaemon/daemon.json
+  shell: sed -i 's/IP_REGISTRY/REGISTRY2/g' /home/administrateur/grafana/daemon.json
 
 - name: Deploy Docker Compose Grafana
   docker_compose:
@@ -28,7 +28,7 @@
 
 - name: Copy the Docker daemon file
   copy:
-    src: /home/administrateur/grafana/Ansible/dockerDaemon/daemon.json
+    src: /home/administrateur/grafana/daemon.json
     dest: /etc/docker/daemon.json
 
 - name: Restart the Docker daemon
