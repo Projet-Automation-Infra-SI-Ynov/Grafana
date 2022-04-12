@@ -28,6 +28,7 @@
 
 - name: Copy the Docker daemon file
   copy:
+    remote_src: yes
     src: /home/administrateur/grafana/daemon.json
     dest: /etc/docker/daemon.json
 
