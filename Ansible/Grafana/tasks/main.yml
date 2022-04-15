@@ -37,3 +37,4 @@
     name: docker
     state: restarted
     masked: no
+  timeout: 60
