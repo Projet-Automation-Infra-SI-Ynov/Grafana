@@ -33,7 +33,7 @@
     dest: /etc/docker/daemon.json
 
 - name: Restart the Docker daemon
-  become: yes
+  #become: yes
   #async: 60
   systemd:
     #state: reloaded
@@ -43,5 +43,7 @@
     masked: no
     #timeout: 60
     #async: 60
-  async: 30
-  poll: 5
+  #async: 30
+  #poll: 5
+  wait_for:
+    timeout: 30
