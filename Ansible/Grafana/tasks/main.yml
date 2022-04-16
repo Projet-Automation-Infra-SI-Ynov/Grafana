@@ -45,5 +45,4 @@
     #async: 60
   #async: 30
   #poll: 5
-    wait_for:
-      timeout: 30
+  timeout: 30
