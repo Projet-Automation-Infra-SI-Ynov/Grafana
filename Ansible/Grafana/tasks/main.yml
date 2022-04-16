@@ -33,11 +33,13 @@
     dest: /etc/docker/daemon.json
 
 - name: Restart the Docker daemon
+  become: yes
+  async: 60
   systemd:
-    state: reloaded
+    #state: reloaded
     #daemon_reload: yes
     name: docker
-    #state: restarted
+    state: restarted
     masked: no
     #timeout: 60
     #async: 60
