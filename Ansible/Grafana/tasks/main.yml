@@ -32,17 +32,25 @@
     src: /home/administrateur/grafana/daemon.json
     dest: /etc/docker/daemon.json
 
+# - name: Restart the Docker daemon
+#   #become: yes
+#   #async: 60
+#   systemd:
+#     #state: reloaded
+#     #daemon_reload: yes
+#     name: docker
+#     state: restarted
+#     masked: no
+#     #timeout: 60
+#     #async: 60
+#   #async: 30
+#   #poll: 5
+#   timeout: 30
+
 - name: Restart the Docker daemon
-  #become: yes
-  #async: 60
   systemd:
-    #state: reloaded
-    #daemon_reload: yes
     name: docker
     state: restarted
     masked: no
-    #timeout: 60
-    #async: 60
-  #async: 30
-  #poll: 5
-  timeout: 30
+  #timeout: 60
+  async: 60
