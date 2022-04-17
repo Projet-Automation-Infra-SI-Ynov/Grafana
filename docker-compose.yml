@@ -8,7 +8,7 @@ services:
     ports:
       - "3100:3100"
     volumes:
-      - ./loki:/etc/loki
+      - /home/administrateur/loki:/etc/loki
     command: -config.file=/etc/loki/local-config.yaml
     restart: always
 
@@ -17,8 +17,8 @@ services:
     container_name: promtail
     hostname: promtail
     volumes:
-      - ./promtail/log:/var/log
-      - ./promtail:/etc/promtail
+      - /home/administrateur/promtail/log:/var/log
+      - /home/administrateur/promtail:/etc/promtail
     command: -config.file=/etc/promtail/config.yml
     restart: always
 
