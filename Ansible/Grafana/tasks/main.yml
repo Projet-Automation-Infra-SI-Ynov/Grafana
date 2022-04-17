@@ -47,10 +47,22 @@
 #   #poll: 5
 #   timeout: 30
 
-- name: Restart the Docker daemon
+# - name: Restart the Docker daemon
+#   systemd:
+#     name: docker
+#     state: restarted
+#     masked: no
+#   #timeout: 60
+#   async: 60
+
+- name: Stop the Docker daemon
   systemd:
     name: docker
-    state: restarted
+    state: stopped
     masked: no
-  #timeout: 60
-  async: 60
+
+- name: Start the Docker daemon
+  systemd:
+    name: docker
+    state: started
+    masked: no
