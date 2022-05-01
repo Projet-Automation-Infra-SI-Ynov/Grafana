@@ -17,6 +17,9 @@
 - name: Add Registry IP in prometheus.yml
   shell: sed -i 's/IP_REGISTRY/REGISTRY2/g' /home/administrateur/grafana/prometheus.yml
 
+- name: Add backup IP in prometheus.yml
+  shell: sed -i 's/IP_BACKUP_SERVER/BACKUP2/g' /home/administrateur/grafana/prometheus.yml
+
 - name: Add Registry IP in daemon.json
   shell: sed -i 's/IP_REGISTRY/REGISTRY2/g' /home/administrateur/grafana/daemon.json
 
