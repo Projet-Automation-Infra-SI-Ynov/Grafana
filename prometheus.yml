@@ -32,7 +32,7 @@ scrape_configs:
   # Registry
   - job_name: 'registry'
     static_configs:
-    - targets: ['IP_REGISTRY:5000', 'IP_REGISTRY:9100', 'IP_REGISTRY:9323']
+    - targets: ['IP_REGISTRY:5001', 'IP_REGISTRY:9100', 'IP_REGISTRY:9323']
   # Backup server
   - job_name: 'backup'
     static_configs:
