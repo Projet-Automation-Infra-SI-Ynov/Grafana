@@ -29,11 +29,11 @@
     project_src: /home/administrateur/grafana
     state: present
 
-- name: Copy the Docker daemon file
-  copy:
-    remote_src: yes
-    src: /home/administrateur/grafana/daemon.json
-    dest: /etc/docker/daemon.json
+# - name: Copy the Docker daemon file
+#   copy:
+#     remote_src: yes
+#     src: /home/administrateur/grafana/daemon.json
+#     dest: /etc/docker/daemon.json
 
 - name: Restart the Docker daemon
   systemd:
