@@ -11,6 +11,12 @@
     dest: '{{ PATH }}'
     version: develop
 
+- name: Add Grafana username in docker-compose.yml
+  shell: sed -i 's/GF_USER/USER2/g' /home/administrateur/grafana/docker-compose.yml
+
+- name: Add Grafana password in docker-compose.yml
+  shell: sed -i 's/GF_PWD/PWD2/g' /home/administrateur/grafana/docker-compose.yml
+
 - name: Add Jenkins IP in prometheus.yml
   shell: sed -i 's/IP_JENKINS/JENKINS2/g' /home/administrateur/grafana/prometheus.yml
 
