@@ -37,3 +37,15 @@ scrape_configs:
   - job_name: 'backup'
     static_configs:
     - targets: ['IP_BACKUP_SERVER:9100']
+  # K3S Master
+  - job_name: 'k3s-master'
+    static_configs:
+    - targets: ['IP_K3SMASTER:9100']
+  # K3S Worker
+  - job_name: 'k3s-worker'
+    static_configs:
+    - targets: ['IP_K3SWORKER:9100']
+  # Graylog
+  - job_name: 'graylog'
+    static_configs:
+    - targets: ['IP_LOG:9100']

@@ -26,6 +26,18 @@
 - name: Add backup IP in prometheus.yml
   shell: sed -i 's/IP_BACKUP_SERVER/BACKUP2/g' /home/administrateur/grafana/prometheus.yml
 
+- name: Add k3s-master IP in prometheus.yml
+  shell: sed -i 's/IP_K3SMASTER/MASTER2/g' /home/administrateur/grafana/prometheus.yml
+
+- name: Add k3s-worker IP in prometheus.yml
+  shell: sed -i 's/IP_K3SWOKER/WORKER2/g' /home/administrateur/grafana/prometheus.yml
+
+- name: Add Graylog IP in prometheus.yml
+  shell: sed -i 's/IP_LOG/GRAYLOG/g' /home/administrateur/grafana/prometheus.yml
+
+- name: Add Registry address IP in daemon.json
+  shell: sed -i 's/IP_REGISTRY/REGISTRY2/g' /etc/docker/daemon.json
+
 - name: Deploy Docker Compose Grafana
   docker_compose:
     build: yes
