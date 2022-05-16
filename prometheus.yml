@@ -48,4 +48,4 @@ scrape_configs:
   # Graylog
   - job_name: 'graylog'
     static_configs:
-    - targets: ['IP_LOG:9100']
+    - targets: ['IP_LOG:9100', 'IP_LOG:9323']
