@@ -40,12 +40,12 @@ scrape_configs:
   # K3S Master
   - job_name: 'k3s-master'
     static_configs:
-    - targets: ['IP_K3SMASTER:9100']
+    - targets: ['IP_K3SMASTER:9100', 'IP_K3SMASTER:9323']
   # K3S Worker
   - job_name: 'k3s-worker'
     static_configs:
-    - targets: ['IP_K3SWORKER:9100']
-  # Graylog
+    - targets: ['IP_K3SWORKER:9100', 'IP_K3SWORKER:9323']
+  # Graylog / Nginx
   - job_name: 'graylog'
     static_configs:
-    - targets: ['IP_LOG:9100', 'IP_LOG:9323']
+    - targets: ['IP_LOG:9100', 'IP_LOG:9323', 'IP_LOG:9113']
