@@ -30,7 +30,7 @@
   shell: sed -i 's/IP_K3SMASTER/MASTER2/g' /home/administrateur/grafana/prometheus.yml
 
 - name: Add k3s-worker IP in prometheus.yml
-  shell: sed -i 's/IP_K3SWOKER/WORKER2/g' /home/administrateur/grafana/prometheus.yml
+  shell: sed -i 's/IP_K3SWORKER/WORKER2/g' /home/administrateur/grafana/prometheus.yml
 
 - name: Add Graylog IP in prometheus.yml
   shell: sed -i 's/IP_LOG/GRAYLOG/g' /home/administrateur/grafana/prometheus.yml
