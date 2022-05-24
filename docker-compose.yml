@@ -1,0 +1,53 @@
+version: "3"
+
+services:
+  grafana:
+    image: grafana/grafana:8.4.4
+    container_name: grafana
+    hostname: grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=GF_USER
+      - GF_SECURITY_ADMIN_PASSWORD=GF_PWD
+    volumes:
+      - ./grafana/provisionning:/etc/grafana/provisionning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    ports:
+      - "3000:3000"
+    restart: always
+    # links:
+    #   - influxdb
+
+  prometheus:
+    image: prom/prometheus:v2.34.0
+    container_name: prometheus
+    hostname: prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: always
+
+  # influxdb:
+  #   # image: influxdb:2.2.0
+  #   image: influxdb:1.8.4-alpine
+  #   container_name: influxdb
+  #   restart: always
+  #   environment:
+  #     - INFLUXDB_DB=influx
+  #     - INFLUXDB_ADMIN_USER=admin
+  #     - INFLUXDB_ADMIN_PASSWORD=admin
+  #   ports:
+  #     - '8086:8086'
+  #   volumes:
+  #     - ./influxdb:/var/lib/influxdb
+
+  # chronograf:
+  #   image: chronograf:1.9.4
+  #   container_name: chronograf
+  #   command: --influxdb-url=http://influxdb:8086
+  #   volumes:
+  #     - ./chronograf:/var/lib/chronograf
+  #   ports:
+  #     - "10000:10000"
+  #   links:
+  #     - influxdb
