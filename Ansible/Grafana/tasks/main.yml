@@ -9,7 +9,7 @@
   git:
     repo: https://github.com/Projet-Automation-Infra-SI-Ynov/Grafana.git
     dest: '{{ PATH }}'
-    version: develop
+    version: master
 
 - name: Add Grafana username in docker-compose.yml
   shell: sed -i 's/GF_USER/USER2/g' /home/administrateur/grafana/docker-compose.yml
@@ -43,17 +43,3 @@
     build: yes
     project_src: /home/administrateur/grafana
     state: present
-
-# - name: Copy the Docker daemon file
-#   copy:
-#     remote_src: yes
-#     src: /home/administrateur/grafana/daemon.json
-#     dest: /etc/docker/daemon.json
-
-# - name: Restart the Docker daemon
-#   systemd:
-#     name: docker
-#     state: restarted
-#     masked: no
-#   #timeout: 60
-#   async: 60
