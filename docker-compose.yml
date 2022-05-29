@@ -36,18 +36,9 @@ services:
   #     - INFLUXDB_DB=influx
   #     - INFLUXDB_ADMIN_USER=admin
   #     - INFLUXDB_ADMIN_PASSWORD=admin
+  #     - DOCKER_INFLUXDB_INIT_USERNAME=admin
+  #     - DOCKER_INFLUXDB_INIT_PASSWORD=BryanCoco2021!
   #   ports:
   #     - '8086:8086'
   #   volumes:
   #     - ./influxdb:/var/lib/influxdb
-
-  # chronograf:
-  #   image: chronograf:1.9.4
-  #   container_name: chronograf
-  #   command: --influxdb-url=http://influxdb:8086
-  #   volumes:
-  #     - ./chronograf:/var/lib/chronograf
-  #   ports:
-  #     - "10000:10000"
-  #   links:
-  #     - influxdb
