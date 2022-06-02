@@ -1,8 +1,0 @@
----
-# tasks file for Git
-
-- name: Download Git
-  apt:
-    name: git
-    state: latest
-    update_cache: yes

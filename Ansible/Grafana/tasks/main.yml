@@ -38,6 +38,15 @@
 - name: Add Registry address IP in daemon.json
   shell: sed -i 's/IP_REGISTRY/REGISTRY2/g' /etc/docker/daemon.json
 
+- name: Add line to collect log
+  shell: echo "auth,authpriv.* @@GRAYLOG:1514" >> /etc/rsyslog.conf
+
+- name: Restart the rsyslog service
+  systemd:
+    name: rsyslog
+    state: restarted
+    masked: no
+
 - name: Deploy Docker Compose Grafana
   docker_compose:
     build: yes
