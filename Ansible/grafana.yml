@@ -1,6 +1,4 @@
 - hosts: grafana
   become: yes
   roles:
-    - role: Docker
-    - role: Git
     - role: Grafana
