@@ -48,5 +48,7 @@ scrape_configs:
   # Graylog / Nginx
   - job_name: 'graylog'
     static_configs:
-    - targets: ['IP_LOG:9100', 'IP_LOG:9323', 'IP_LOG:9113']
-    
+    - targets: ['IP_LOG:9100', 'IP_LOG:9323', 'IP_LOG:9113', 'IP_LOG:9114']
+  - job_name: 'DNS'
+    static_configs:
+    - targets: ['IP_DNS:9182']

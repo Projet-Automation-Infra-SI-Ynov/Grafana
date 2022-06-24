@@ -35,6 +35,9 @@
 - name: Add Graylog IP in prometheus.yml
   shell: sed -i 's/IP_LOG/GRAYLOG/g' /home/administrateur/grafana/prometheus.yml
 
+- name: Add DNS IP in prometheus.yml
+  shell: sed -i 's/IP_DNS/DNS2/g' /home/administrateur/grafana/prometheus.yml
+
 - name: Add Registry address IP in daemon.json
   shell: sed -i 's/IP_REGISTRY/REGISTRY2/g' /etc/docker/daemon.json
 
